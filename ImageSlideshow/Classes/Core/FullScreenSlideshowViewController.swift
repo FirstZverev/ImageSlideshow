@@ -43,7 +43,7 @@ open class FullScreenSlideshowViewController: UIViewController {
     open var inputs: [InputSource]?
 
     /// Background color
-    open var backgroundColor = UIColor.white
+    open var backgroundColor = UIColor.gray
 
     /// Enables/disable zoom
     open var zoomEnabled = true {
@@ -80,7 +80,7 @@ open class FullScreenSlideshowViewController: UIViewController {
         closeButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.close), for: UIControlEvents.touchUpInside)
         view.addSubview(closeButton)
         
-        deleteButton.setImage(UIImage(named: "delete", in: Bundle(for: type(of: self)), compatibleWith: nil), for: UIControlState())
+        deleteButton.setImage(UIImage(named: "ic_cross_white", in: Bundle(for: type(of: self)), compatibleWith: nil), for: UIControlState())
         deleteButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.close), for: UIControlEvents.touchUpInside)
         view.addSubview(deleteButton)
         
@@ -116,7 +116,7 @@ open class FullScreenSlideshowViewController: UIViewController {
             
             closeButton.frame = closeButtonFrame ?? CGRect(x: max(10, safeAreaInsets.left), y: max(10, safeAreaInsets.top), width: 40, height: 40)
             
-            deleteButton.frame = deleteButtonFrame ?? CGRect(x: max(10, safeAreaInsets.right), y: max(10, safeAreaInsets.top), width: 40, height: 40)
+            deleteButton.frame = deleteButtonFrame ?? CGRect(x: max(40, safeAreaInsets.left), y: max(10, safeAreaInsets.top), width: 40, height: 40)
         }
 
         slideshow.frame = view.frame
