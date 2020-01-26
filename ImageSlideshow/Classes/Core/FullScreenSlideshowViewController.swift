@@ -25,48 +25,6 @@ open class FullScreenSlideshowViewController: UIViewController {
     /// Close button 
     open var closeButton = UIButton()
 
-    /// Close button frame
-    open var closeButtonFrame: CGRect?
-
-    /// Closure called on page selection
-    open var pageSelected: ((_ page: Int) -> Void)?
-
-    /// Index of initial image
-    open var initialPage: Int = 0
-
-    /// Input sources to 
-    open var inputs: [InputSource]?
-
-    /// Background color
-    open var backgroundColor = UIColor.white
-
-    /// Enables/disable zoom
-    open var zoomEnabled = true {
-        didSet {
-            slideshow.zoomEnabled = zoomEnabled
-        }
-    }
-
-    fileprivate var isInit = true
-
-    convenience init() {
-        self.init(nibName:nil, bundle:nil)
-
-    open var slideshow: ImageSlideshow = {
-        let slideshow = ImageSlideshow()
-        slideshow.zoomEnabled = true
-        slideshow.contentScaleMode = UIViewContentMode.scaleAspectFit
-        slideshow.pageIndicatorPosition = PageIndicatorPosition(horizontal: .center, vertical: .bottom)
-        // turns off the timer
-        slideshow.slideshowInterval = 0
-        slideshow.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-
-        return slideshow
-    }()
-
-    /// Close button 
-    open var closeButton = UIButton()
-
     open var deleteButton = UIButton()
 
     /// Close button frame
