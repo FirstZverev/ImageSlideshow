@@ -76,11 +76,11 @@ open class FullScreenSlideshowViewController: UIViewController {
         view.addSubview(slideshow)
 
         // close button configuration
-        closeButton.setImage(UIImage(named: "ic_cross_white", in: Bundle(for: type(of: self)), compatibleWith: nil), for: UIControlState())
+        closeButton.setImage(UIImage(named: "Vector-10.png", in: Bundle(for: type(of: self)), compatibleWith: nil), for: UIControlState())
         closeButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.close), for: UIControlEvents.touchUpInside)
         view.addSubview(closeButton)
         
-        deleteButton.setImage(UIImage(named: "ic_cross_white", in: Bundle(for: type(of: self)), compatibleWith: nil), for: UIControlState())
+        deleteButton.setImage(UIImage(named: "Vector-11.png", in: Bundle(for: type(of: self)), compatibleWith: nil), for: UIControlState())
         deleteButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.close), for: UIControlEvents.touchUpInside)
         view.addSubview(deleteButton)
         
@@ -116,7 +116,7 @@ open class FullScreenSlideshowViewController: UIViewController {
             
             closeButton.frame = closeButtonFrame ?? CGRect(x: max(10, safeAreaInsets.left), y: max(10, safeAreaInsets.top), width: 40, height: 40)
             
-            deleteButton.frame = deleteButtonFrame ?? CGRect(x: view.bounds.width-50, y: max(10, safeAreaInsets.top), width: 40, height: 40)
+            deleteButton.frame = deleteButtonFrame ?? CGRect(x: view.bounds.width-40, y: max(10, safeAreaInsets.top), width: 30, height: 40)
         }
 
         slideshow.frame = view.frame
