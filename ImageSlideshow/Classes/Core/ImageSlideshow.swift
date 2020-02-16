@@ -547,7 +547,7 @@ open class ImageSlideshow: UIView {
         fullscreen.inputs = images
         slideshowTransitioningDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: self, slideshowController: fullscreen)
         fullscreen.transitioningDelegate = slideshowTransitioningDelegate
-        self.window?.rootViewController?.present(fullscreen, animated: true, completion: nil)
+        controller.present(fullscreen, animated: true, completion: nil)
 
         return fullscreen
     }
